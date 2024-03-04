@@ -20,6 +20,6 @@ export default class Product extends BaseModel {
   @column()
   declare status: boolean
 
-  @hasMany(() => ProductAttributeModel, { foreignKey: 'product_id', localKey: 'product_id' })
+  @hasMany(() => ProductAttributeModel, { foreignKey: 'product_id' })
   declare productAttributes: HasMany<typeof ProductAttributeModel>
 }

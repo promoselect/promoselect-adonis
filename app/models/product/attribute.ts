@@ -1,13 +1,11 @@
-import { BaseModel, column, hasOne } from '@adonisjs/lucid/orm'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
-// Modelos
-import ProductModel from '#models/product'
+import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export default class ProductAttribute extends BaseModel {
   static table = 'oc_product_attribute'
 
-  @column({ isPrimary: true })
-  declare id: number
-  @hasOne(() => ProductModel)
-  declare product: HasOne<typeof ProductModel>
+  @column({ isPrimary: true, columnName: 'product_id' })
+  declare productId: number
+
+  @column()
+  declare text: string
 }

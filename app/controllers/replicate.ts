@@ -15,8 +15,8 @@ export default class ReplicateController {
       }
     }
     return {
-      colors,
       products: productsWithAttributes,
+      colors,
     }
   }
 }
